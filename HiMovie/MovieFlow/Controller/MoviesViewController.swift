@@ -124,7 +124,9 @@ extension MoviesViewController: UICollectionViewDataSource {
                     guard error == nil, let query = query else { return }
                     self?.filteredMovies?.append(contentsOf: query.results)
                     DispatchQueue.main.async {
-                        collectionView.reloadData()
+                        collectionView.performBatchUpdates({
+                            collectionView.reloadSections(IndexSet(0...0))
+                        }, completion: nil)
                     }
                 }
             }
@@ -135,7 +137,9 @@ extension MoviesViewController: UICollectionViewDataSource {
                     guard error == nil, let query = query else { return }
                     self?.popularMovies?.append(contentsOf: query.results)
                     DispatchQueue.main.async {
-                        collectionView.reloadData()
+                        collectionView.performBatchUpdates({
+                            collectionView.reloadSections(IndexSet(0...0))
+                        }, completion: nil)
                     }
                 }
             }

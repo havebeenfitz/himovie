@@ -104,7 +104,7 @@ class MovieDetailViewController: UIViewController {
         
         movieTitleLabel.text = details.title
         movieOverviewLabel.text = details.overview
-        movieRevenueLabel.text = "$\(details.revenue)"
+        movieRevenueLabel.text = "\(details.revenue)"
         movieReleaseDateLabel.text = details.releaseDate
     }
     

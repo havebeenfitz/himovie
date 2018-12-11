@@ -136,6 +136,7 @@ class MovieDetailViewController: UIViewController {
                 SVProgressHUD.showError(withStatus: "Can't save image")
                 return
             }
+            
             try realm.write {
                 let favMovie = FavoriteMovie()
                 favMovie.imagePath = imagePath
@@ -146,16 +147,24 @@ class MovieDetailViewController: UIViewController {
                 favMovie.revenue = movieRevenueLabel.text!
                 favMovie.title = movieTitleLabel.text!
                 
+                if let _ = realm.object(ofType: FavoriteMovie.self, forPrimaryKey: movieID) {
+                    SVProgressHUD.show(withStatus: "Already in favorites!")
+                    SVProgressHUD.dismiss(withDelay: 1)
+                    return
+                }
+                
                 realm.add(favMovie)
+                SVProgressHUD.showSuccess(withStatus: "Added to Favourites!")
+                SVProgressHUD.dismiss(withDelay: 1)
             }
         } catch {
             SVProgressHUD.showError(withStatus: error.localizedDescription)
+            SVProgressHUD.dismiss(withDelay: 1)
         }
         
         setupRemoveNavigationItem()
         
-        SVProgressHUD.showSuccess(withStatus: "Added to Favourites!")
-        SVProgressHUD.dismiss(withDelay: 1)
+        
     }
     
     @objc private func removeFromRealm() {

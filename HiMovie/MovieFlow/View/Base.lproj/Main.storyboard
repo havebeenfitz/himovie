@@ -211,6 +211,9 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWD-8i-ejY">
                                         <rect key="frame" x="20" y="264" width="89.5" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="89.5" id="8f6-d4-YqO"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -261,7 +264,6 @@
                                     <constraint firstItem="RTG-MY-9BP" firstAttribute="trailing" secondItem="yH0-fs-5Rx" secondAttribute="trailing" id="a83-pv-You"/>
                                     <constraint firstItem="Wst-09-jCH" firstAttribute="leading" secondItem="JYn-M5-I8w" secondAttribute="trailing" constant="8" id="dNB-Mq-i2N"/>
                                     <constraint firstItem="s7v-KL-YAw" firstAttribute="top" secondItem="lWD-8i-ejY" secondAttribute="bottom" constant="8" symbolic="YES" id="gV9-OL-EaJ"/>
-                                    <constraint firstItem="lWD-8i-ejY" firstAttribute="centerY" secondItem="c7P-Vm-tLC" secondAttribute="centerY" constant="0.5" id="h4o-Ju-1gH"/>
                                     <constraint firstItem="t9x-7h-aYB" firstAttribute="top" secondItem="Wst-09-jCH" secondAttribute="bottom" constant="8" symbolic="YES" id="kr3-IN-33k"/>
                                     <constraint firstItem="s7v-KL-YAw" firstAttribute="centerX" secondItem="c7P-Vm-tLC" secondAttribute="centerX" id="lWP-qr-oLj"/>
                                     <constraint firstItem="s7v-KL-YAw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="c7P-Vm-tLC" secondAttribute="trailingMargin" constant="-12" id="neR-az-dth"/>
@@ -270,7 +272,8 @@
                                     <constraint firstItem="JYn-M5-I8w" firstAttribute="top" secondItem="c7P-Vm-tLC" secondAttribute="top" constant="26" id="oll-yW-lWd"/>
                                     <constraint firstItem="t9x-7h-aYB" firstAttribute="leading" secondItem="Wst-09-jCH" secondAttribute="leading" id="otd-ls-Mbp"/>
                                     <constraint firstItem="t9x-7h-aYB" firstAttribute="trailing" secondItem="RTG-MY-9BP" secondAttribute="trailing" id="sXX-Ls-thM"/>
-                                    <constraint firstAttribute="trailing" secondItem="lWD-8i-ejY" secondAttribute="trailing" constant="265.5" id="zc2-te-8Tf"/>
+                                    <constraint firstItem="lWD-8i-ejY" firstAttribute="top" secondItem="JYn-M5-I8w" secondAttribute="bottom" constant="27" id="xax-ef-F5Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="lWD-8i-ejY" secondAttribute="trailing" priority="999" constant="265.5" id="zc2-te-8Tf"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

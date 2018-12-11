@@ -191,7 +191,7 @@ class MovieDetailViewController: UIViewController {
             SVProgressHUD.dismiss(withDelay: 1)
         }
         
-        setupAddNavigationItem()
+        navigationController?.popViewController(animated: true)
         
     }
     

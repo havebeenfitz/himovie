@@ -111,7 +111,7 @@ class MovieDetailViewController: UIViewController {
     private func saveImageAndGetPath() -> String? {
         do {
             let image = movieImageView.image?.jpegData(compressionQuality: 1)
-            let docDir = try FileManager.default.url(for: .applicationDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let docDir = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
             
             let imageURL = docDir.appendingPathComponent(detailsFromServer?.posterPath ?? "tmp.jpg")
             try image?.write(to: imageURL)
@@ -119,7 +119,9 @@ class MovieDetailViewController: UIViewController {
             return imageURL.absoluteString
             
         } catch {
+            print(error)
             SVProgressHUD.showError(withStatus: error.localizedDescription)
+            SVProgressHUD.dismiss(withDelay: 1)
             return nil
         }
         

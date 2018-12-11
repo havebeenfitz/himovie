@@ -164,7 +164,6 @@ class MovieDetailViewController: UIViewController {
         
         setupRemoveNavigationItem()
         
-        
     }
     
     @objc private func removeFromRealm() {
@@ -184,17 +183,16 @@ class MovieDetailViewController: UIViewController {
         do {
             try realm.write {
                 realm.delete(object)
+                SVProgressHUD.showSuccess(withStatus: "Removed from Favourites!")
+                SVProgressHUD.dismiss(withDelay: 1)
             }
         } catch {
             SVProgressHUD.showError(withStatus: error.localizedDescription)
+            SVProgressHUD.dismiss(withDelay: 1)
         }
-        
-        
         
         setupAddNavigationItem()
         
-        SVProgressHUD.showSuccess(withStatus: "Removed from Favourites!")
-        SVProgressHUD.dismiss(withDelay: 1)
     }
     
     
